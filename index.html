@@ -4,83 +4,23 @@
 <head>
 	<title>Redux服务器</title>
 	<style type="text/css">
-		body {
-			margin: 0px;
-			width: 100%;
-			height: 100%;
-			background: rgb(104, 195, 223);
-			position: absolute;
-		}
 
-		div.content {
-			height: auto;
-		}
-
-		div:not(#topbar, *[background]) {
-			position: relative;
-			top: 0;
-		}
-
-		div#topbar {
-			z-index: 999;
-			width: 100%;
-			background: chocolate;
-			position: fixed;
-			font-size: 1em;
-		}
-
-		div#topbar li {
-			list-style-type: none;
-			float: left;
-			width: 18%;
-			height: 100%;
-		}
-
-		div#topbar li * {
-			display: block;
-			text-decoration: none;
-			user-select: none;
-			padding-top: 1.5em;
-			padding-bottom: 1.5em;
-			text-align: center;
-		}
-
-		div#topbar li:first-child {
-			margin-right: 10%;
-			color: wheat;
-		}
-
-		div#topbar li a {
-			color: white;
-		}
-
-		div#topbar li a:hover {
-			color: black;
-			background: rgb(255, 203, 155);
-			transition: 0.2s;
-		}
-
-		div[shade] {
-			z-index: -2;
-			background: #000;
-			opacity: 0;
-		}
-
-		*[background] {
-			top: 0;
-			position: fixed;
-			z-index: -999;
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
-			user-select: none;
-		}
-
-		*[textcenter] {
-			text-align: center;
-		}
 	</style>
 	<script type="text/javascript">
+		function loadCss() {
+			var head = document.getElementsByTagName('head')[0];
+			var link = document.createElement('link');
+			link.type = 'text/css';
+			link.rel = 'stylesheet';
+			if (/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+				link.href = "./css/index_mobileCSS.css";
+			}
+			else {
+				link.href = "./css/indexCSS.css"
+			}
+			head.appendChild(link);
+		}
+		document.onreadystatechange = loadCss;
 		// var notTopbarStyle;
 		// var topbar;
 		// window.onload = function () {
