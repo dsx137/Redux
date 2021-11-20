@@ -1,9 +1,101 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
+	<title>Redux服务器</title>
+	<style type="text/css">
+		*[textcenter] {
+			text-align: center;
+		}
+
+		body {
+			margin: 0px;
+			background: rgb(104, 195, 223);
+			position: relative;
+		}
+
+		div {
+			overflow: hidden;
+			height: auto;
+		}
+
+		div:not(#topbar, *[background]) {
+			position: relative;
+			top: 0;
+		}
+
+		*[background] {
+			top: 0;
+			position: fixed;
+			z-index: -1;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+		}
+
+		div#topbar {
+			z-index: 999;
+			width: 100%;
+			height: auto;
+			background: chocolate;
+			position: absolute;
+		}
+
+		div#topbar li {
+			list-style-type: none;
+			float: left;
+			width: 18%;
+		}
+
+		div#topbar li * {
+			display: block;
+			text-decoration: none;
+			user-select: none;
+			padding-top: 16px;
+			padding-bottom: 16px;
+			text-align: center;
+		}
+
+		div#topbar li:first-child {
+			margin-right: 10%;
+			color: wheat;
+		}
+
+		div#topbar li a {
+			color: white;
+		}
+
+		div#topbar li a:hover {
+			color: black;
+			background: rgb(255, 203, 155);
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			notTopbarStyle = document.styleSheets[0].cssRules[3];
+			notTopbarStyle.style.top = getComputedStyle(topbar).height;
+		}
+		window.onresize = function () {
+			notTopbarStyle.style.top = getComputedStyle(topbar).height;
+		}
+	</script>
+
+
 </head>
+
 <body>
-<h1>还没做</h1>
+	<div id="topbar">
+		<li><span>Redux服务器</span></li>
+		<li><a>主页</a></li>
+		<li><a>下载</a></li>
+		<li><a>加入我们</a></li>
+		<li><a>关于</a></li>
+	</div>
+	<div textcenter>
+		<h1>W.I.P</h1>
+	</div>
+	<video background src="./asset/vd/str1s.mp4" type="video/mp4" autoplay muted loop>
+	</video>
 </body>
+
 </html>
