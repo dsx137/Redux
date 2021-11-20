@@ -14,7 +14,7 @@
 			position: relative;
 		}
 
-		div {
+		div.content {
 			overflow: hidden;
 			height: auto;
 		}
@@ -22,15 +22,6 @@
 		div:not(#topbar, *[background]) {
 			position: relative;
 			top: 0;
-		}
-
-		*[background] {
-			top: 0;
-			position: fixed;
-			z-index: -1;
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
 		}
 
 		div#topbar {
@@ -69,6 +60,22 @@
 			color: black;
 			background: rgb(255, 203, 155);
 		}
+
+		*[background] {
+			top: 0;
+			position: fixed;
+			z-index: -999;
+			height: 100%;
+			width: 100%;
+			object-fit: cover;
+			user-select: none;
+		}
+
+		div[shade] {
+			z-index: -2;
+			background: #000;
+			opacity: 0;
+		}
 	</style>
 	<script type="text/javascript">
 		window.onload = function () {
@@ -84,18 +91,21 @@
 </head>
 
 <body>
-	<div id="topbar">
+	<div id="topbar" class="content">
 		<li><span>Redux服务器</span></li>
-		<li><a>主页</a></li>
-		<li><a>下载</a></li>
-		<li><a>加入我们</a></li>
-		<li><a>关于</a></li>
+		<li><a onclick="alert('啥也没有')">主页</a></li>
+		<li><a onclick="alert('啥也没有')">下载</a></li>
+		<li><a onclick="alert('啥也没有')">加入我们</a></li>
+		<li><a onclick="alert('啥也没有')">关于</a></li>
 	</div>
-	<div textcenter>
+	<div textcenter class="content">
 		<h1>W.I.P</h1>
 	</div>
-	<video background src="./asset/vd/str1s.mp4" type="video/mp4" autoplay muted loop>
+	<div background shade></div>
+	<video background autoplay muted loop>
+		<source src=" ./asset/vd/str1s.mp4" type="video/mp4">
 	</video>
+
 </body>
 
 </html>
