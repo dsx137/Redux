@@ -13,7 +13,6 @@
 		}
 
 		div.content {
-
 			height: auto;
 		}
 
@@ -25,7 +24,6 @@
 		div#topbar {
 			z-index: 999;
 			width: 100%;
-			height: auto;
 			background: chocolate;
 			position: fixed;
 			font-size: 1em;
@@ -83,18 +81,27 @@
 		}
 	</style>
 	<script type="text/javascript">
-		var notTopbarStyle;
+		// var notTopbarStyle;
+		// var topbar;
+		// window.onload = function () {
+		// 	topbar = document.getElementById("topbar");
+		// 	notTopbarStyle = document.styleSheets[0].cssRules[2];
+		// 	notTopbarStyle.style.top = getComputedStyle(topbar).height;
+		// }
+		// window.onresize = function () {
+		// 	notTopbarStyle.style.top = getComputedStyle(topbar).height;
+		// }
+		var fillBlank;
 		var topbar;
 		window.onload = function () {
+			fillBlank = document.getElementById("fillBlank");
 			topbar = document.getElementById("topbar");
-			notTopbarStyle = document.styleSheets[0].cssRules[2];
-			notTopbarStyle.style.top = getComputedStyle(topbar).height;
+			fillBlank.style.height = getComputedStyle(topbar).height;
 		}
 		window.onresize = function () {
-			notTopbarStyle.style.top = getComputedStyle(topbar).height;
+			fillBlank.style.height = getComputedStyle(topbar).height;
 		}
 	</script>
-
 
 </head>
 
@@ -106,12 +113,14 @@
 		<li><a onclick="alert('啥也没有')">加入我们</a></li>
 		<li><a onclick="alert('啥也没有')">关于</a></li>
 	</div>
+
+	<div id="fillBlank"></div>
 	<div textcenter class="content">
 		<h1>W.I.P</h1>
 	</div>
 	<div background shade></div>
 	<video background autoplay muted loop>
-		<source src=" ./asset/vd/str1s.mp4" type="video/mp4">
+		<source src="./asset/vd/str1s.mp4" type="video/mp4">
 	</video>
 
 </body>
